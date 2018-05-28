@@ -1,7 +1,7 @@
 
 D2U (Deluge to uTorrent)
 ========================
-- Created by u/JagaTelesin (reddit)
+- Created by u/JagaTelesin (reddit) - John B.
 - Inspired by older scripts from alphagamm on reddit
 - Uses the Deluge Framework (included in D2U already) https://github.com/BackSlasher/deluge_framework (GNU 2.0 license)
 - v1.0, March 25, 2018
