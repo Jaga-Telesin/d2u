@@ -6,6 +6,7 @@ D2U (Deluge to uTorrent)
 - Uses the Deluge Framework (included in D2U already) https://github.com/BackSlasher/deluge_framework (GNU 2.0 license)
 - v1.0, March 25, 2018
 
+Note:  To get the entire v1.0 build for use on a server, simply download the D2U_v1.0.zip file.
 
 
 Why to use D2U, Deluge and uTorrent
