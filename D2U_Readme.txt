@@ -75,7 +75,7 @@ Step 5 - Automating D2U  (optional)
 Troubleshooting
 ================
 
-To find out why the script might be having issues on your server, edit the '/d2u/deluge_scripts/variables.py' file, change output to 'True', then remove the comment #'s from the beginning of the two lines under 'Debugging' and save the file.  Then SSH into your server, navigate to the '/d2u/deluge_scripts' folder, and run the script using 'python d2u.py'.  Any problems it encounters will be output to the console to help with diagnosis.
+- To find out why the script might be having issues on your server, edit the '/d2u/deluge_scripts/variables.py' file, change output to 'True', then remove the comment #'s from the beginning of the two lines under 'Debugging' and save the file.  Then SSH into your server, navigate to the '/d2u/deluge_scripts' folder, and run the script using 'python d2u.py'.  Any problems it encounters will be output to the console to help with diagnosis.
 
 
 
