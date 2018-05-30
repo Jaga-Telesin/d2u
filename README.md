@@ -9,11 +9,11 @@ v1.1, March 30, 2018
 ====================
 - Syntax corrections for delay in loop
 - Added optional command line argument for minimum ratio (min_ratio)
-   Use:  python d2y.py 0.8    (as an example to only move torrents at or above a 0.8 ratio)
+   Usage:  python -u d2y.py 0.8    (as an example to only move torrents at or above a 0.8 ratio)
 - Added additional information from script when output variable is 'True'
 
-
 Note:  To get the entire v1.1 build for use on a server, simply download the D2U_v1.1.zip file.
+
 
 
 Why to use D2U, Deluge and uTorrent
@@ -70,23 +70,24 @@ Step 3 - Configure clients
 Step 4 - Manually running D2U
 - Remember that any torrents Deluge has finished downloading and which meet your ratio minimum set in the variables.py file, will have their .torrent removed from Deluge and moved to your uTorrent watch folder.  There is no confirmation of the move - the script was set to run and complete quietly.
 - SSH to your server, and navigate to your 'd2u/deluge_scripts directory' (ex: /home/user/downloads/d2u/deluge_scripts).
-- Run the following command: python d2u.py
-- Optionally, you can add the required minimum ratio on the command line, like:  python d2u.py 0.8
+- Run the following command: python -u d2u.py
+- Optionally, you can add the required minimum ratio on the command line, like:  python -u d2u.py 0.8
+- The -u is necessary for script timing (delays between each move)
 - Note any output or errors.  See the 'Troubleshooting' section below if you run into problems.
 
 
 Step 5 - Automating D2U  (optional)
 - You can use a cron job to automate the D2U script.  From a SSH shell, run 'crontab -e' and add a new line for the job (Search the web for more information on setting up a cron job if needed).  I prefer to have it run every 24 hours at 3am, but shorter or longer is fine too.  An example line in the crontab editor for a 24-hour schedule looks like this:
- 0 3 * * * /home/user/downloads/d2u/deluge_scripts/d2u.py
+ 0 3 * * * python -u /home/user/downloads/d2u/deluge_scripts/d2u.py
 - Be sure to replace the path with one appropriate to your server and your folder configuration!
-- When you are satisfied your cron job is setup correctly, edit your '/d2u/deluge_scripts/variables.py' file and change the output setting to 'False'.  This will suppress any messages when the cron job runs.
+- When you are satisfied your cron job is setup correctly, edit your '/d2u/deluge_scripts/variables.py' file, change the output setting to 'False' and add # before the two debug lines.  This will suppress any messages when the cron job runs.
 
 
 
 Troubleshooting
 ================
 
-To find out why the script might be having issues on your server, edit the '/d2u/deluge_scripts/variables.py' file, change output to 'True', then remove the comment #'s from the beginning of the two lines under 'Debugging' and save the file.  Then SSH into your server, navigate to the '/d2u/deluge_scripts' folder, and run the script using 'python d2u.py'.  All info will be output to the console to help with diagnosis.
+To find out why the script might be having issues on your server, edit the '/d2u/deluge_scripts/variables.py' file, change output to 'True', then remove the comment #'s from the beginning of the two lines under 'Debugging' and save the file.  Then SSH into your server, navigate to the '/d2u/deluge_scripts' folder, and run the script using 'python -u d2u.py'.  All info will be output to the console to help with diagnosis.
 
 
 
@@ -103,3 +104,4 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Attribution must be included in any distribution of this package.
+
