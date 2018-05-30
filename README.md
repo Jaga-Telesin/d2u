@@ -13,7 +13,7 @@ v1.1, March 30, 2018
 - Added additional information from script when output variable is 'True'
 
 
-Note:  To get the entire v1.0 build for use on a server, simply download the D2U_v1.1.zip file.
+Note:  To get the entire v1.1 build for use on a server, simply download the D2U_v1.1.zip file.
 
 
 Why to use D2U, Deluge and uTorrent
