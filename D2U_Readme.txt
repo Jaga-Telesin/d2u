@@ -4,7 +4,13 @@ D2U (Deluge to uTorrent)
 - Created by u/JagaTelesin (reddit) - John B.
 - Inspired by older scripts from alphagamm on reddit
 - Uses the Deluge Framework (included in D2U already) https://github.com/BackSlasher/deluge_framework (GNU 2.0 license)
-- v1.0, March 25, 2018
+
+v1.1, March 30, 2018
+====================
+- Syntax corrections for delay in loop
+- Added optional command line argument for minimum ratio (min_ratio)
+   Use:  python d2y.py 0.8    (as an example to only move torrents at or above a 0.8 ratio)
+- Added additional information from script when output variable is 'True'
 
 
 
@@ -18,8 +24,10 @@ Features
 - Moves only finished torrents from Deluge to uTorrent
 - Won't move torrents still downloading, being checked, or with errors
 - Configurable minimum seed amount before moving
+- Min seed amount can be passed with command line argument (ex: python d2u.py 0.8
 - Duplicate torrents stored in a trash folder
 - uTorrent hash-checks files after receiving them
+- Detailed info when using output=True variable
 
 Requirements
 ============
@@ -61,6 +69,7 @@ Step 4 - Manually running D2U
 - Remember that any torrents Deluge has finished downloading and which meet your ratio minimum set in the variables.py file, will have their .torrent removed from Deluge and moved to your uTorrent watch folder.  There is no confirmation of the move - the script was set to run and complete quietly.
 - SSH to your server, and navigate to your 'd2u/deluge_scripts directory' (ex: /home/user/downloads/d2u/deluge_scripts).
 - Run the following command: python d2u.py
+- Optionally, you can add the required minimum ratio on the command line, like:  python d2u.py 0.8
 - Note any output or errors.  See the 'Troubleshooting' section below if you run into problems.
 
 
@@ -75,7 +84,7 @@ Step 5 - Automating D2U  (optional)
 Troubleshooting
 ================
 
-- To find out why the script might be having issues on your server, edit the '/d2u/deluge_scripts/variables.py' file, change output to 'True', then remove the comment #'s from the beginning of the two lines under 'Debugging' and save the file.  Then SSH into your server, navigate to the '/d2u/deluge_scripts' folder, and run the script using 'python d2u.py'.  Any problems it encounters will be output to the console to help with diagnosis.
+To find out why the script might be having issues on your server, edit the '/d2u/deluge_scripts/variables.py' file, change output to 'True', then remove the comment #'s from the beginning of the two lines under 'Debugging' and save the file.  Then SSH into your server, navigate to the '/d2u/deluge_scripts' folder, and run the script using 'python d2u.py'.  All info will be output to the console to help with diagnosis.
 
 
 
