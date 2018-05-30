@@ -20,7 +20,7 @@ filter_torrents({},['name','progress','ratio','state'],torrentAction)
 for i in listdir(from_dir):
     if os.path.isfile(to_dir+i):
         shutil.move(from_dir+i,trash_dir)
-        sleep(step_delay)
+        time.sleep(step_delay)
     else:
         shutil.move(from_dir+i,to_dir)
-        sleep(step_delay)
+        time.sleep(step_delay)
