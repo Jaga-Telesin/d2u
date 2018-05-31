@@ -12,8 +12,6 @@ v1.1, March 30, 2018
    Usage:  python -u d2y.py 0.8    (as an example to only move torrents at or above a 0.8 ratio)
 - Added additional information from script when output variable is 'True'
 
-Note:  To get the entire v1.1 build for use on a server, simply download the D2U_v1.1.zip file.
-
 
 
 Why to use D2U, Deluge and uTorrent
