@@ -13,6 +13,8 @@ v1.1, March 30, 2018
 - Added additional information from script when output variable is 'True'
 
 
+Note:  The D2U_v1.1.zip file in this repository has all scripts and empty folders required for a server installation.
+
 
 Why to use D2U, Deluge and uTorrent
 ===================================
